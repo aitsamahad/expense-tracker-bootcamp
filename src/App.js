@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Header } from "./components/Header";
+import { Balance } from "./components/Balance";
+import { IncomeExpenses } from "./components/IncomeExpenses";
+import { TransactionList } from "./components/TransactionList";
+import { AddTransaction } from "./components/AddTransaction";
+import EmailSticky from "./components/EmailSticky";
+import SocialSticky from "./components/SocialSticky";
+
+import { GlobalProvider } from "./context/GlobalState";
+
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <>
+      <GlobalProvider id="particles-js">
+        <div className="container">
+          <Header />
+          <Balance />
+          <IncomeExpenses />
+          <TransactionList />
+          <AddTransaction />
+          <EmailSticky />
+          <SocialSticky />
+        </div>
+      </GlobalProvider>
+      <section>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Bootcamp Assignment by Aitsam Ahad -{" "}
+          <a href="https://aitsamahad.dev">Check my portfolio here!</a> - 2020
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      </section>
+    </>
   );
 }
 
